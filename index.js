@@ -31,7 +31,8 @@ const ingredients = [...new Set(pizzas.flatMap(({ingredients}) => ingredients))]
 const ingredientsEl = document.querySelector('.ingredients');
 ingredients.forEach(ingredient => {
     const el = document.createElement('div');
-    el.textContent = ingredient;
+    const numPizzas = pizzas.filter(pizza => pizza.ingredients.some(ing => ingredient === ing)).length;
+    el.textContent = `${ingredient} (${numPizzas})`;
     el.append(...['ignore', 'include', 'exclude'].map((val, i) => createRadio(ingredient, val, i === 0)));
     ingredientsEl.appendChild(el);
 });
