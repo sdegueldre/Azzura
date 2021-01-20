@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.table, .col {
+    display: flex;
+    flex-direction: column;
+}
+
+.row, .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid black;
+}
+
+.ingredients div {
+    display: flex;
+    border-right: 1px solid black;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-right: -1px;
+}
+
+.ingredients div input[type=radio]:first-child {
+    margin-left: auto;
+}
+
+.ingredients div input[type=radio]:nth-child(2) {
+    outline: .25em solid green;
+}
+
+.ingredients div input[type=radio]:nth-child(3) {
+    outline: .25em solid red;
+}
